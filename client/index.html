@@ -1,0 +1,99 @@
+<!doctype html>
+<!--
+	spa.html
+	spa browser document
+-->
+<html>
+<head>
+	<!-- ie9+ rendering support for latest standards -->
+	<meta http-equiv="Content-Type" 
+		  content="text/html; charset=ISO-8859-1">
+	<meta http-equiv="X-UA-Compatible" content="IE-edge" />
+
+	<title>SPA Chapters 5-6</title>
+
+	<!-- third-party stylesheets -->
+
+	<!-- our stylesheets -->
+	<link rel="stylesheet" href="css/spa.css" type="text/css"/>
+	<link rel="stylesheet" href="css/spa.chat.css" type="text/css"/>
+	<link rel="stylesheet" href="css/spa.shell.css" type="text/css"/>
+	<link rel="stylesheet" href="css/spa.avtr.css" type="text/css"/>
+
+	<!-- third-party javascript -->
+	<script src="socket.io/socket.io.js"></script>
+	<script src="js/jq/taffy.js"></script>
+	<script src="js/jq/handlebars-v3.0.3.js"></script>
+	<script src="js/jq/jquery-1.11.1.js"></script>
+	<script src="js/jq/jquery.uriAnchor.js"></script>
+	<script src="js/jq/jquery.event.gevent.js"></script>
+	<script src="js/jq/jquery.event.ue.js"></script>
+
+	<!-- our javascript -->
+	<script src="js/spa.js"></script>
+	<script src="js/spa.util.js"></script>
+	<script src="js/spa.data.js"></script>
+	<script src="js/spa.fake.js"></script>
+	<script src="js/spa.model.js"></script>
+	<script src="js/spa.util_b.js"></script>
+	<script src="js/spa.shell.js"></script>
+	<script src="js/spa.chat.js"></script>
+	<script src="js/spa.avtr.js"></script>
+	<script>
+		$(function () {
+			spa.initModule($('#spa')); 
+		});
+	</script>
+	
+	<!-- templates -->
+	<script id="spa-shell-template" type="text/x-handlebars-template">
+    <div class="spa-shell-head">
+      <div class="spa-shell-head-logo">
+        <h1>{{title}}</h1>
+        <p>javascript end to end</p>
+      </div>
+      <div class="spa-shell-head-acct"></div>
+      <div class="spa-shell-head-search"></div>
+    </div>
+    <div class="spa-shell-main">
+      <div class="spa-shell-main-nav"></div>
+      <div class="spa-shell-main-content"></div>
+    </div>
+    <div class="spa-shell-foot"></div>
+    <div class="spa-shell-modal"></div>
+  </script>
+  
+  <script id="spa-chat-template" type="text/x-handlebars-template">
+    <div class="spa-chat">
+      <div class="spa-chat-head">
+        <div class="spa-chat-head-toggle">+</div>
+        <div class="spa-chat-head-title">
+          {{title}}
+        </div>
+      </div>
+      <div class="spa-chat-closer">x</div>
+      <div class="spa-chat-sizer">
+        <div class="spa-chat-list">
+          <div class="spa-chat-list-box"></div>
+        </div>
+        <div class="spa-chat-msg">
+          <div class="spa-chat-msg-log"></div>
+          <div class="spa-chat-msg-in">
+            <form class="spa-chat-msg-form">
+              <input type="text"/>
+              <input type="submit" style="display:none"/>
+              <div class="spa-chat-msg-send">
+                send
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </script>
+	
+</head>
+<body>
+  <div id="spa"></div>
+</body>
+</html>
